@@ -1,38 +1,80 @@
-.App {
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(231, 230, 230);
+}
+
+.product-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 300px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* Reduce padding */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  max-height: 100px; /* Reduce image height */
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.card-title, .card-text {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  font-size: 14px;
+  margin: 5px 0; /* Reduce margins */
+}
+
+.product-card:hover .card-title,
+.product-card:hover .card-text {
+  opacity: 1;
+}
+
+.greeting {
   text-align: center;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.greeting h2 {
+  animation: fadeIn 2s ease-in-out;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
